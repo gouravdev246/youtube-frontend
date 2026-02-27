@@ -1,0 +1,38 @@
+/* App-level layout styles */
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient background blobs */
+.app-wrapper::before,
+.app-wrapper::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-wrapper::before {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 45, 85, 0.15), transparent 70%);
+  top: -200px;
+  right: -100px;
+}
+
+.app-wrapper::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  bottom: -150px;
+  left: -80px;
+}
