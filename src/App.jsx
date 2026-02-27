@@ -8,6 +8,8 @@ import Sidebar from './components/Sidebar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Analytics } from "@vercel/analytics/react"
+
 export const CounterContext = createContext()
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
@@ -51,6 +53,7 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
+      <Analytics />
     </CounterContext>
   )
 }
